@@ -105,6 +105,7 @@ const AltitudeTable = (props) => {
               <TableRow>
                 <TableCell
                   className={classes.cell}
+                  data-testid="altitude"
                 >
                   Altitude<br />
                   {mPref ? (

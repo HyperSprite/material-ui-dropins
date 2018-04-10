@@ -3,13 +3,7 @@ import Dialog, { withMobileDialog } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 
 import types from './types';
-// import DialogState from './dialog-state';
 import DialogMessage from './dialog-message';
-
-const propTypes = {
-  ...types,
-  ftpData: types.ftpData.isRequired,
-};
 
 const DialogButton = (props) => {
   const { color, fullScreen, handleClose, handleOpen, ftpData, open } = props;
@@ -21,6 +15,7 @@ const DialogButton = (props) => {
         color={color}
         onClick={handleOpen}
         size="small"
+        data-testid="handleOpen"
       >
         {ftpData}
       </Button>
@@ -30,8 +25,19 @@ const DialogButton = (props) => {
         onClose={handleClose}
       >
         <DialogMessage handleClose={handleClose} print {...props}>
-          <Button onClick={() => window.print()} color={color} >Print</Button>
-          <Button onClick={handleClose} >Close</Button>
+          <Button
+            onClick={() => window.print()}
+            color={color}
+            data-testid="handlePrint"
+          >
+            Print
+          </Button>
+          <Button
+            onClick={handleClose}
+            data-testid="handleClose"
+          >
+            Close
+          </Button>
         </DialogMessage>
       </Dialog>
     </span>
@@ -39,6 +45,11 @@ const DialogButton = (props) => {
   );
 };
 
-DialogButton.propTypes = propTypes;
+DialogButton.propTypes = {
+  ...types,
+  ftpData: types.ftpData.isRequired,
+  handleClose: types.handleClose.isRequired,
+  handleOpen: types.handleOpen.isRequired,
+};
 
 export default withMobileDialog()(DialogButton);

@@ -135,12 +135,12 @@ const DialogMessage = (props) => {
   } = props;
   const getZones = (low, high, factor, percent) => {
     const tmpPercent = percent ? '%' : '';
-    const tmpLow = low ? `${justFns.round(low * factor, 0)}${tmpPercent}` : '<';
-    const tmpHigh = high ? `${justFns.round(high * factor, 0)}${tmpPercent}` : '+';
+    const tmpLow = low ? `${justFns.round(low * factor, 0)}${tmpPercent}` : '';
+    const tmpHigh = high ? `${justFns.round(high * factor, 0)}${tmpPercent}` : '';
     return (
       <div className={classes.box}>
         <div>{tmpLow}</div>
-        <div className={classes.noPrint}>{'\u00A0'}-{'\u00A0'}</div>
+        {(tmpLow && tmpHigh) && <div className={classes.noPrint}>{'\u00A0'}-{'\u00A0'}</div>}
         <div>{tmpHigh}</div>
       </div>
     );
@@ -148,7 +148,10 @@ const DialogMessage = (props) => {
 
   return (
     <div className={classes.root} >
-      <DialogTitle className={classes.title} >
+      <DialogTitle
+        className={classes.title}
+        data-testid="title"
+      >
         <span className={classes.noPrint}>
           {'Zones for\u00A0'}
         </span>
@@ -161,7 +164,7 @@ const DialogMessage = (props) => {
             className={classes.row}
           >
             <div className={classes.boxLabel}>
-              <div className={classes.zone} >
+              <div className={classes.zone} data-testid={`zone-${row.zone}`}>
                 {`Zone ${row.zone}`}
               </div>
               <div className={classes.row.zoneName} >
@@ -170,10 +173,10 @@ const DialogMessage = (props) => {
               </div>
             </div>
             <div className={classes.boxMain} >
-              <div className={classes.boxData}>
+              <div className={classes.boxData} data-testid={`percent-${row.zone}`}>
                 {getZones(row.factorStart, row.factorEnd, 100, true)}
               </div>
-              <div className={classes.boxData}>
+              <div className={classes.boxData} data-testid={`range-${row.zone}`}>
                 {getZones(row.factorStart, row.factorEnd, ftpData, false)}
               </div>
             </div>
@@ -183,8 +186,6 @@ const DialogMessage = (props) => {
       <DialogActions className={classes.noPrint} >
         {children}
       </DialogActions>
-
-
     </div>
   );
 };

@@ -10,3 +10,5 @@ npm-debug.log*
 todolist.md
 
 /dst
+
+*-copy.js*
