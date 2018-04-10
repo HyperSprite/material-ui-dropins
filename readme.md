@@ -12,6 +12,8 @@ Install
 
 Creates a table of Power at Altitude with Power Zone modal
 
+[Example](https://codesandbox.io/s/z67molq8ox)
+
 ##### Receives Props
 
 | prop name | type | values | description |
