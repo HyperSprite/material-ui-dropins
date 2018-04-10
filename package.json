@@ -62,7 +62,7 @@
         1,
         {
           "extensions": [
-            "spec.js",
+            "test.js",
             ".jsx"
           ]
         }
