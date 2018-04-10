@@ -8,7 +8,9 @@ Install
 
 ## Components
 
-### AltitudeTable I doubt they would be useful to anyone else.
+### AltitudeTable
+
+Creates a table of Power at Altitude with Power Zone modal
 
 ##### Receives Props
 
