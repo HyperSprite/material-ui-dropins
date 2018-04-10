@@ -17,7 +17,7 @@
   "license": "MIT",
   "description": "Dropin components built on material-ui",
   "main": "dst/index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "test": "jest",
     "test:dev": "jest --watch",
