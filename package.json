@@ -99,17 +99,16 @@
     "jest-enzyme": "^4.1.0",
     "pre-commit": "^1.2.2",
     "raf": "^3.4.0",
+    "react-testing-library": "^2.0.0",
     "react-test-renderer": "^16.2.0"
   },
   "dependencies": {
-    "@hypersprite/open-state-rp": "^1.0.2",
     "@hypersprite/toggle-state-rp": "^1.0.4",
     "classnames": "^2.2.5",
     "just-fns": "^1.6.5",
     "material-ui": "^1.0.0-beta.29",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-testing-library": "^2.0.0"
+    "react-dom": "^16.2.0"
   }
 }
