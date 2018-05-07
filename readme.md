@@ -21,15 +21,3 @@ Creates a table of Power at Altitude with Power Zone modal
 | baseElevation | Number | Meters | Athlete's base altitude in meters |
 | currentFTP | Number | FTP | Athlete's current FTP |
 | mPref | Boolean | true or false* | true: imperial, false: metric |
-
-## Scripts
-
-use `npm run <script>`
-
-* `lint` - runs linter
-* `test` - runs test
-* `test:dev` - runs test in watch mode
-* `build` - runs build
-* `build:dev` - runs build in watch mode
-
-`npm version <major | minor | patch>`

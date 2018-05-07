@@ -9,7 +9,7 @@ describe('DialogMessage output', () => {
     const { getByTestId, getByText } = render(
       <DialogMessage {...dProps.dialogMessage} />,
     );
-    expect(getByText('FTP')).toHaveTextContent(
+    expect(getByText(/FTP/)).toHaveTextContent(
       '200 FTP',
     );
     expect(getByTestId('zone-6')).toHaveTextContent(
